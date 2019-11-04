@@ -50,10 +50,8 @@ class Player {
   }
 
   prettyTime (timeInSeconds){
-    $("#time-control .total-time").text();
-    $("#time-control .current-time").text();
-    const seconds = parseFloat(timeInSeconds);
-    const minutes = (Math.floor(seconds / 60));
+    const seconds = (Math.floor(timeInSeconds % 60));
+    const minutes = (Math.floor((timeInSeconds % 3600) / 60));
     return minutes + ":" + seconds;
   }
 }

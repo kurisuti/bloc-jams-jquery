@@ -35,17 +35,18 @@
   helper.playPauseAndUpdate(previousSong);
   });
 
-  setInterval( () => {
+
+setInterval( () => {
     if (player.playState !== "playing"){return;}
     const currentTime = player.getTime();
     const duration = player.getDuration();
     const percent = (currentTime / duration) * 100;
-    $("#time-control .current-time").text( currentTime );
+    $('#time-control .current-time').text( player.prettyTime(currentTime));
     $("#time-control input").val(percent);
   }, 1000);
 
-  totalInterval( () => {
-    $("#time-control. total-time").text( duration);
+totalInterval( () => {
+    $("#time-control .total-time").text(player.prettyTime(totalTime));
     $("#time-control input").val(percent);
     player.playState.duration;
   });
