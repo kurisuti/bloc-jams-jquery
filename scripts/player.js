@@ -49,11 +49,19 @@ class Player {
     this.soundObject.setVolume(percent);
   }
 
-  // prettyTime (timeInSeconds){
-  //   const seconds = parseFloat(timeInSeconds);
-  //   const minutes = (Math.floor(seconds / 60));
-  //   return minutes + ":" + seconds;
-  // }
+  prettyTime (timeInSeconds){
+    const seconds = (Math.floor(timeInSeconds % 60));
+    const minutes = (Math.floor((timeInSeconds % 3600) / 60));
+    return minutes + ":" + this.pad(seconds);
+  }
+
+  pad(seconds) {
+    var value = seconds;
+    if (seconds < 10) {
+      value = '0' + seconds;
+    }
+    return value;
+  }
 }
 
 const player = new Player();
