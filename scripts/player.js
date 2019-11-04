@@ -52,7 +52,15 @@ class Player {
   prettyTime (timeInSeconds){
     const seconds = (Math.floor(timeInSeconds % 60));
     const minutes = (Math.floor((timeInSeconds % 3600) / 60));
-    return minutes + ":" + seconds;
+    return minutes + ":" + this.pad(seconds);
+  }
+
+  pad(seconds) {
+    var value = seconds;
+    if (seconds < 10) {
+      value = '0' + seconds;
+    }
+    return value;
   }
 }
 
