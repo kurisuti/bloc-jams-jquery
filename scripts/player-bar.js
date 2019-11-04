@@ -45,11 +45,7 @@ setInterval( () => {
     $("#time-control input").val(percent);
   }, 1000);
 
-totalInterval( () => {
-    $("#time-control .total-time").text(player.prettyTime(totalTime));
-    $("#time-control input").val(percent);
-    player.playState.duration;
-  })();
+
 
 
 }
